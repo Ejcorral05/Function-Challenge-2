@@ -1,0 +1,57 @@
+#include <iostream>
+//Im creatin a function that inputs grades 
+void inputGrades(double& g1, double& g2, double& g3){
+
+cin >> g1;
+cin >> g2;
+cin >> g3;
+
+}
+
+// creating a function to calculate the average
+
+double calculateAverage(const double g1, const double g2, const double g3){
+return g1+g2+g3 /3;
+
+}
+
+//  takes the average grade and return letter
+char getLetterGrade(const double average){
+if (average <= 59 && average >= 0 ){
+    cout << "F" << endl;
+
+}else if (average <= 69.99 && average >= 60 ){
+ cout << "D"<< endl;
+}else if (average <= 79.99 && average >= 70){
+    cout << "C"<< endl;
+}else if (average <= 89.99 && average >= 80){
+    cout << "B" << endl;
+
+}else if (average <= 100 && average >= 90){
+    cout << "A" << endl;
+
+}
+else{
+ cout << "does not exist" << endl;
+
+}
+ return 0;
+}
+int main() {
+    // I use the command to output the words "Hello World"
+    
+double grade1;
+double grade2;
+double grade3;
+double tot;
+inputGrades(grade1, grade2, grade3);
+tot = calculateAverage(grade1, grade2, grade3);
+ cout << getLetterGrade(tot) << endl;
+//  do {
+// cout<< "The grade is a " << 
+//  }while {(count <)
+
+//  }
+
+    return 0;
+}
