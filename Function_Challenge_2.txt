@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+//Im creating a function that inputs grades
+void inputGrades(double& g1, double& g2, double& g3){
+
+    cin >> g1;
+    cin >> g2;
+    cin >> g3;
+
+}
+
+// creating a function to calculate the average
+
+double calculateAverage(const double g1, const double g2, const double g3){
+    return (g1 + g2 + g3) /3.0;
+
+}
+
+//  takes the average grade and return letter
+char getLetterGrade(const double average){
+    if (average >= 90 ){
+        return 'A';
+    }else if (average >= 80){
+        return 'B';
+    }else if (average >= 70){
+        return 'C';
+
+    }else if (average >= 60){
+        return 'D';
+
+    } else {
+        return 'F';
+    }
+}
+int main() {
+    int pass;
+
+        double grade1;
+        double grade2;
+        double grade3;
+        double tot;
+        char ot = ' ';
+    // using a do while loop to display a menu
+    do{
+        // Creating a menu table
+        cout << "Menu" << endl;
+        cout << "1. Input Grades" << endl;
+        cout << "2. Display Average" << endl;
+        cout << "3. Assign and Display Grade" << endl;
+        cout << "4. Quit" << endl;
+        cin >> pass;
+
+
+
+
+        switch (pass) {
+            // assigning functions for each case
+            case 1:
+                inputGrades(grade1, grade2, grade3);
+                cout << grade1 << "-" << grade2 << "-" << grade3 << endl;
+
+                break;
+            case 2:
+                tot = calculateAverage(grade1, grade2, grade3);
+                cout<< tot << " is the current average" << endl;
+
+                break;
+            case 3:
+
+                ot = getLetterGrade(tot);
+                cout << "Your grade is a " << ot << " from your calculated average" << endl;
+                break;
+
+            case 4: cout << "Quit" << endl;
+
+                break;
+                // If the user chooses a number outside of 1-4
+            default:
+                cout << "That number is not part of our options.  1-4" << endl;
+        }
+    }while (pass != 4);
+
+    return 0;
+
+
+}
